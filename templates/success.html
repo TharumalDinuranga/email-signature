@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Generated</title>
+    <style>
+        body {
+            background: url('https://i.postimg.cc/0jg1gPGS/You-Tube-Thumbnails.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 450px;
+        }
+        .signature-box {
+            padding: 15px;
+            background: white;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        /* Ensure anchor tags styled like buttons inherit the button style */
+        a.btn {
+            line-height: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Email Signature Generated Successfully!</h2>
+
+        <div class="signature-box" id="signature-container">
+            {{ signature_html | safe }}
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn" onclick="copySignature()">Copy to Clipboard</button>
+            <a href="/download" class="btn">Download as HTML</a>
+        </div>
+    </div>
+
+    <script>
+        function copySignature() {
+            const signature = document.getElementById("signature-container");
+            const range = document.createRange();
+            range.selectNodeContents(signature);
+
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            try {
+                document.execCommand("copy");
+                selection.removeAllRanges();
+                alert("Signature copied successfully! You can now paste it into your email signature settings.");
+            } catch (err) {
+                alert("Unable to copy signature. Please select and copy manually.");
+                console.error("Copy error:", err);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature Generator</title>
+    <style>
+        body {
+            background: url('https://i.postimg.cc/0jg1gPGS/You-Tube-Thumbnails.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Your Email Signature</h2>
+        <form method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required><br>
+            <input type="text" name="last_name" placeholder="Last Name" required><br>
+            <input type="text" name="position" placeholder="Your Position" required><br>
+            <input type="text" name="phone" placeholder="Phone Number"><br>
+            <input type="email" name="email" placeholder="Email Address"><br>
+            <input type="text" name="education" placeholder="Education"><br>
+            <input type="text" name="x_handle" placeholder="X (Twitter) Handle"><br>
+            <input type="text" name="linkedin_handle" placeholder="LinkedIn Handle"><br>
+            <input type="submit" value="Generate Signature">
+        </form>
+    </div>
+</body>
+</html>
